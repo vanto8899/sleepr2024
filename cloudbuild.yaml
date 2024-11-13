@@ -62,7 +62,7 @@ steps:
 # Specify one of the following logging options
 
 # Option 1: Use a specific logs bucket
-logsBucket: gs://your-logs-bucket-name
+# logsBucket: gs://your-logs-bucket-name
 
 # Option 2: Use regional user-owned bucket (uncomment below)
 # options:
