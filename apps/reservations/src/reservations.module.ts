@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import * as Joi from 'joi';
 import { ReservationsService } from './reservations.service';
 import { ReservationsController } from './reservations.controller';
-import { DatabaseModule, LoggerModule, PAYMENTS_SERVICE, AUTH_SERVICE } from '@app/common';
+import { DatabaseModule, LoggerModule, PAYMENTS_SERVICE, AUTH_SERVICE, HealthModule } from '@app/common';
 import { ReservationDocument, ReservationSchema } from './models/reservation.schema';
 import { ReservationsRepository } from './reservations.repository';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -50,7 +50,8 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         }),
         inject: [ConfigService],
       }
-    ])
+    ]),
+    HealthModule,
   ],
 
   controllers: [ReservationsController],
